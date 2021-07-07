@@ -9,6 +9,15 @@ and pulling details using resttemplate.<br>
 All the micro-services, register themselves with Eureka server.<br>
 Also while department micro-service is getting consumed in user micro-service <br>
 via. application name rather than earlier hostname and port.<br>
+3.0- API Gateway- All the requests coming from outside world will come to <br>
+API Gateway first and then based on url pattern it will go to particular micro-services. <br>
+All the external world traffic will go through API gateway port.<br>
+In this example we are using port 9191 port for API gateway. department service <br>
+and user service are using 9001 and 9002 ports; however all the requests now <br>
+will get accessed with 9191 port and internally API gateway will route it to <br>
+particular micro-service depending upon rules we mention in application.yaml file <br>
+with predicates.<br>
+
 
 
 
