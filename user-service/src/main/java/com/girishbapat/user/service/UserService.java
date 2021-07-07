@@ -33,7 +33,13 @@ public class UserService {
 		log.info("Inside save user method of UserService"+userId);
 		ResponseTemplateVO responseTemplateVO=new ResponseTemplateVO();
 		User user=userRepository.findByUserId(userId);
-		Department department= restTemplate.getForObject("http://localhost:9001/departments/"+user.getUserId(), Department.class);
+		/* Note: Before we introduced service registry, we needed to specificially mention hostname and port.
+		 * Department department= restTemplate.getForObject("http://localhost:9001/departments/"+user.getUserId(), Department.class);
+		 * Here after using eureka server, we have changed now same to 'DEPARTMENT-SERVICE'
+		 * We also need to update in the application where bean is defined that this should be load balanced
+		 * */
+		
+		Department department= restTemplate.getForObject("http://DEPARTMENT-SERVICE/departments/"+user.getUserId(), Department.class);
 		responseTemplateVO.setUser(user);
 		responseTemplateVO.setDepartment(department);
 		return responseTemplateVO;
