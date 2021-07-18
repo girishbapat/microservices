@@ -17,7 +17,7 @@ and user service are using 9001 and 9002 ports; however all the requests now <br
 will get accessed with 9191 port and internally API gateway will route it to <br>
 particular micro-service depending upon rules we mention in application.yaml file <br>
 with predicates.<br>
-<b>4.0- Config Server- Here we will first create new project in the current <br> repository which will be used to refer as configuration server for other <br> repositories.<br>
+<b>4.0- Config Server-</b> Here we will first create new repository which will be<br> used to refer as configuration server for other projects in our current <br> repository.
 
 
 
