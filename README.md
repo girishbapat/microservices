@@ -17,7 +17,16 @@ and user service are using 9001 and 9002 ports; however all the requests now <br
 will get accessed with 9191 port and internally API gateway will route it to <br>
 particular micro-service depending upon rules we mention in application.yaml file <br>
 with predicates.<br>
-<b>4.0- Config Server-</b> Here we will first create new repository which will be<br> used to refer as configuration server for other projects in our current <br> repository.
+<b>4.0- Config Server-</b> Here we have first created new repository https://github.com/girishbapat/config-server, which will be<br> used to refer as configuration server for other projects in our current <br> repository.<br> Now, we need following: <br>
+<td> 1. To add common configurations, in this newly created repository in <br> application.yml file. </td> <br> 
+<td>2. In cloud-config-server project, add @EnableConfigServer annotation and <br>
+refer to above repository.</td> <br>
+<td>3. Remove the common configurations which we have added in above repository <br> from all the other projects.</td> <br>
+<td>4. We would need to add bootstrap.yml in other microservices than cloud-config-server <br> to specify that cloud config is enabled through cloud-config-server. </td> <br>
+<td>5. Need to add respective dependencies in pom.xml files for all those projects. </td> <br>
+
+
+
 
 
 

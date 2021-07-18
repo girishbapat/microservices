@@ -4,14 +4,3 @@ server:
 spring:
   application:
     name: USER-SERVICE
-# As we are connecting to eureka server, use the port of that service in the default-zone url
-# note regiser with eureka and fetch registry values are true
-# 
-eureka:
-  client:
-    register-with-eureka: true
-    fetch-registry: true
-    service-url:
-      default-zone: http://localhost:8761/eureka/
-  instance:
-    hostname: localhost
